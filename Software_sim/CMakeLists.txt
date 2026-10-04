@@ -6,9 +6,16 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>/softwar
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 
 # Custom Libaries
+add_subdirectory(${LIB_PATH}/logger EXCLUDE_FROM_ALL)
 
 add_executable(
     hack_cpu_software_sim.bin
     MACOSX_BUNDLE
     Software_sim/main.c
+)
+
+target_link_libraries(
+    hack_cpu_software_sim.bin
+    PUBLIC
+    logger
 )
