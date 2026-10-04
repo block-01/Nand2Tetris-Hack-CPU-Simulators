@@ -4,6 +4,8 @@ project(hack_simulators C)
 option(BUILD_SOFTWARE_SIM "Builds the HACK Software Simulator" OFF)
 option(BUILD_HARDWARE_SIM "Builds the HACK Hardware Simulator" OFF)
 
+set(LIB_PATH "${PROJECT_SOURCE_DIR}/lib")
+
 if(${BUILD_SOFTWARE_SIM})
     message(STATUS "Starting Build for Software Simulator.")
     include("Software_sim/CMakeLists.txt")
